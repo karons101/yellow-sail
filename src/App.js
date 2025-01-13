@@ -8,7 +8,7 @@ import Profile from './components/Profile'; // Profile component
 import Login from './components/Login'; // Login component
 import Register from './components/Register'; // Register component
 import MediaPlayer from './components/MediaPlayer'; // MediaPlayer component
-import VideoGallery from './components/VideoGallery'; // VideoGallery component
+import VideoGallery from './components/VideoGallary'; // VideoGallery component
 import MusicGallery from './components/MusicGallary'; // MusicGallery component
 import Upload from './components/Upload'; // Upload component
 import Favorites from './components/Favorites'; // Favorites component
