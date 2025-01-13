@@ -1,8 +1,8 @@
 // src/components/NavBar.js
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { IoMenu, IoClose, IoAnchor } from "react-icons/io5"; // Importing icons
-import './NavBar.css'; // Import the CSS file for styling
+import { IoMenu, IoClose, IoBoat } from "react-icons/io5"; // Changed IoAnchor to IoBoat
+import "./NavBar.css"; // Import the CSS file for styling
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
@@ -23,14 +23,12 @@ const NavBar = () => {
                 <li><NavLink to="/login">Login</NavLink></li>
                 <li><NavLink to="/register">Register</NavLink></li>
             </ul>
-            <div className="nav__logo">
-                <img src={`${process.env.PUBLIC_URL}/images/kmusic.png`} alt="Logo" />
-            </div>
-            <div className="nav__anchor">
-                <IoAnchor /> {/* Ship anchor icon */}
+            <div className="nav__icon">
+                <IoBoat /> {`${process.env.PUBLIC_URL}/images/myfavicon.png`}
             </div>
         </nav>
     );
 };
 
 export default NavBar;
+         
