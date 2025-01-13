@@ -1,0 +1,32 @@
+// src/components/Header.scss
+
+.header {
+    display: flex;
+    flex-direction: column; // Stack logo and NavBar vertically
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa; // Light background color
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 50px; // Adjust logo size
+        margin-right: 10px; // Space between logo and brand name
+    }
+
+    .brand-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffcc00; // Bright color for the brand name
+    }
+}
+
+.tagline {
+    font-size: 1rem;
+    color: #666; // Subtle color for the tagline
+    font-style: italic;
+}

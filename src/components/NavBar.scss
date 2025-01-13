@@ -26,15 +26,69 @@
 
 .navigation {
     display: flex; // Use flexbox for navigation items
-    gap: 1rem; // Space between navigation items
+    align-items: center; // Center items vertically
+
+    .nav-links {
+        display: flex; // Use flexbox for nav links
+        gap: 1rem; // Space between navigation items
+
+        a {
+            text-decoration: none; // Remove underline from links
+            color: #333; // Dark color for links
+            font-weight: 500; // Medium font weight
+            transition: color 0.3s; // Smooth transition for color change
+
+            &:hover {
+                color: #ffcc00; // Change color on hover
+            }
+        }
+    }
+
+    .mobile-menu-icon {
+        display: none; // Hide by default
+        cursor: pointer; // Change cursor to pointer
+    }
 }
 
-// Content styles
-.content {
-    width: 80%; // Width of the content area
-    margin: 2rem 10% 0 10%; // Margin around the content
-    max-width: 100%; // Ensure it doesn't exceed 100% width
-    box-sizing: border-box; // Include padding and border in width/height
-    min-height: 100vh; // Minimum height of the content area
-    padding-top: 6vh; // Adjust this value based on your navbar height
+// Mobile dropdown styles
+.mobile-dropdown {
+    display: flex;
+    flex-direction: column; // Stack links vertically
+    background-color: #eee; // Background color for dropdown
+    position: absolute; // Position it below the navbar
+    top: 100%; // Align it below the navbar
+    right: 0; // Align to the right
+    width: 100%; // Full width
+    z-index: 999; // Ensure it appears above other elements
+
+    a {
+        padding: 1rem; // Add padding to links
+        text-align: center; // Center text
+        color: #333; // Dark color for links
+        text-decoration: none; // Remove underline
+
+        &:hover {
+            background-color: #ffcc00; // Change background on hover
+            color: white; // Change text color on hover
+        }
+    }
+}
+
+// Media query for mobile view
+@media (max-width: 768px) {
+    .navigation {
+        justify-content: space-between; // Space between logo and mobile icon
+    }
+
+    .nav-links {
+        display: none; // Hide links in mobile view
+    }
+
+    .mobile-menu-icon {
+        display: block; // Show mobile menu icon
+    }
+
+    .mobile-dropdown {
+        display: flex; // Show dropdown when mobile menu is open
+    }
 }

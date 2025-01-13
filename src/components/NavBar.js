@@ -1,36 +1,50 @@
-// src/components/NavBar.js
-import React, { useEffect, useState } from 'react';
+// src/components/Navbar.js
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { IoMenu, IoClose } from 'react-icons/io5'; // Use IoMenu for hamburger icon
 import './NavBar.scss'; // Import the SCSS file for styling
+import './NavBar.css'; // Import the CSS file for styling
 
-const NavBar = () => {
-    const [scrolled, setScrolled] = useState(false);
+const Navbar = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const handleScroll = () => {
-        const offset = window.scrollY;
-        setScrolled(offset > 200); // Change state based on scroll position
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return (
-        <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <nav className={`navbar ${isMobileMenuOpen ? 'scrolled' : ''}`}>
             <div className="logo">
-                <img src="/images/logo.png" alt="Logo" /> {/* Logo image */}
+                <img src="/images/kmusic.png" alt="Logo" /> {/* Adjust the path to your logo */}
             </div>
+
             <div className="navigation">
-                {/* Your navigation links here */}
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/services">Services</a>
-                <a href="/contact">Contact</a>
+                <div className="nav-links">
+                    <NavLink to="/" exact activeClassName="active">Home</NavLink>
+                    <NavLink to="/news" activeClassName="active">News</NavLink>
+                    <NavLink to="/about" activeClassName="active">About Us</NavLink>
+                    <NavLink to="/favorite" activeClassName="active">Favorite</NavLink>
+                    <NavLink to="/location" activeClassName="active">Location</NavLink>
+                    <NavLink to="/get-started" activeClassName="active">Get Started</NavLink>
+                </div>
+
+                <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
+                    {isMobileMenuOpen ? <IoClose size={30} /> : <IoMenu size={30} />} {/* Hamburger icon */}
+                </div>
             </div>
-        </div>
+
+            {isMobileMenuOpen && (
+                <div className="mobile-dropdown">
+                    <NavLink to="/" exact onClick={toggleMobileMenu}>Home</NavLink>
+                    <NavLink to="/news" onClick={toggleMobileMenu}>News</NavLink>
+                    <NavLink to="/about" onClick={toggleMobileMenu}>About Us</NavLink>
+                    <NavLink to="/favorite" onClick={toggleMobileMenu}>Favorite</NavLink>
+                    <NavLink to="/location" onClick={toggleMobileMenu}>Location</NavLink>
+                    <NavLink to="/get-started" onClick={toggleMobileMenu}>Get Started</NavLink>
+                </div>
+            )}
+        </nav>
     );
 };
 
-export default NavBar;
+export default Navbar;
