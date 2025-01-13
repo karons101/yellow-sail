@@ -1,34 +1,36 @@
 // src/components/NavBar.js
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { IoMenu, IoClose, IoBoat } from "react-icons/io5"; // Changed IoAnchor to IoBoat
-import "./NavBar.css"; // Import the CSS file for styling
+import React, { useEffect, useState } from 'react';
+import './NavBar.scss'; // Import the SCSS file for styling
 
 const NavBar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+    const [scrolled, setScrolled] = useState(false);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen); // Toggle the menu open/close state
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        setScrolled(offset > 200); // Change state based on scroll position
     };
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <nav className="navbar">
-            <div className="nav__toggle" onClick={toggleMenu}>
-                {isMenuOpen ? <IoClose /> : <IoMenu />} {/* Toggle icon */}
+        <div className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+            <div className="logo">
+                <img src="/images/logo.png" alt="Logo" /> {/* Logo image */}
             </div>
-            <ul className={`nav__list ${isMenuOpen ? "show-menu" : ""}`}>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/playlist">Playlist</NavLink></li>
-                <li><NavLink to="/profile">Profile</NavLink></li>
-                <li><NavLink to="/login">Login</NavLink></li>
-                <li><NavLink to="/register">Register</NavLink></li>
-            </ul>
-            <div className="nav__icon">
-                <IoBoat /> {`${process.env.PUBLIC_URL}/images/myfavicon.png`}
+            <div className="navigation">
+                {/* Your navigation links here */}
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
             </div>
-        </nav>
+        </div>
     );
 };
 
 export default NavBar;
-         

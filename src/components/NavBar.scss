@@ -1,0 +1,40 @@
+// src/components/NavBar.scss
+
+// Navbar styles
+.navbar {
+    width: 100%;
+    min-height: 6vh; // Minimum height of the navbar
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between; // Space between logo and navigation
+    align-items: center; // Center items vertically
+    background-color: #eee; // Default background color
+    transition: all 0.7s ease-in; // Smooth transition for background change
+    z-index: 1000; // Ensure it's on top of other elements
+}
+
+.scrolled {
+    position: fixed; // Fix the navbar at the top when scrolled
+    top: 0;
+    left: 0;
+    background-color: lightblue; // Change background color when scrolled
+}
+
+.logo img {
+    width: 50px; // Adjust logo size
+}
+
+.navigation {
+    display: flex; // Use flexbox for navigation items
+    gap: 1rem; // Space between navigation items
+}
+
+// Content styles
+.content {
+    width: 80%; // Width of the content area
+    margin: 2rem 10% 0 10%; // Margin around the content
+    max-width: 100%; // Ensure it doesn't exceed 100% width
+    box-sizing: border-box; // Include padding and border in width/height
+    min-height: 100vh; // Minimum height of the content area
+    padding-top: 6vh; // Adjust this value based on your navbar height
+}
