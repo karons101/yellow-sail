@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoMenu, IoClose, IoAnchor } from "react-icons/io5"; // Importing icons
-import "./NavBar.css"; // Import the CSS file for styling
+import './NavBar.css'; // Import the CSS file for styling
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
