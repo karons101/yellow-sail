@@ -1,0 +1,14 @@
+/* src/components/Playlist.css */
+.playlist {
+    padding: 2rem;
+}
+
+.playlist h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.playlist p {
+    font-size: 1.2rem;
+    color: #666;
+}

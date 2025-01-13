@@ -1,0 +1,15 @@
+/* src/components/NotFound.css */
+.not-found {
+    padding: 2rem;
+    text-align: center;
+}
+
+.not-found h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.not-found p {
+    font-size: 1.2rem;
+    color: #666;
+}

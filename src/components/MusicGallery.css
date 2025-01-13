@@ -1,0 +1,14 @@
+/* src/components/MusicGallery.css */
+.music-gallery {
+    padding: 2rem;
+}
+
+.music-gallery h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.music-gallery p {
+    font-size: 1.2rem;
+    color: #666;
+}

@@ -1,0 +1,65 @@
+/* src/components/Footer.css */
+.footer {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__links {
+    margin-bottom: 1.5rem;
+}
+
+.footer__links h3,
+.footer__social h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.footer__links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__links li {
+    margin: 0.5rem 0;
+}
+
+.footer__links a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.footer__links a:hover {
+    text-decoration: underline;
+}
+
+.footer__social {
+    margin-top: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between icons */
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: #333; /* Icon color */
+    font-size: 1.5rem; /* Icon size */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Style for the love icon */
+.love-icon {
+    color: yellow; /* Change the color to yellow */
+    font-size: 1.2rem; /* Adjust size if needed */
+}

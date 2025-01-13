@@ -1,0 +1,45 @@
+/* src/components/NavBar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    position: relative;
+}
+
+.nav__logo {
+    margin-left: auto; /* Pushes logo to the right */
+}
+
+.nav__toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    transition: max-height 0.3s ease;
+}
+
+.nav__list.show-menu {
+    display: block; /* Show dropdown when menu is open */
+}
+
+@media (max-width: 768px) {
+    .nav__list {
+        display: none; /* Hide links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 60px; /* Adjust based on navbar height */
+        background-color: #fff;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav__list.show-menu {
+        display: flex; /* Show links when menu is open */
+    }
+}

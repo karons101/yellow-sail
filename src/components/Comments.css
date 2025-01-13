@@ -1,0 +1,14 @@
+/* src/components/Comments.css */
+.comments {
+    padding: 2rem;
+}
+
+.comments h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.comments p {
+    font-size: 1.2rem;
+    color: #666;
+}

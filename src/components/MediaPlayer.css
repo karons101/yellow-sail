@@ -1,0 +1,14 @@
+/* src/components/MediaPlayer.css */
+.media-player {
+    padding: 2rem;
+}
+
+.media-player h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.media-player p {
+    font-size: 1.2rem;
+    color: #666;
+}

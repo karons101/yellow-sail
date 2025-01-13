@@ -1,0 +1,36 @@
+/* src/components/Register.css */
+.register {
+    padding: 2rem;
+    max-width: 400px;
+    margin: auto;
+}
+
+.register h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.register form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register button {
+    padding: 0.5rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.register button:hover {
+    background-color: #218838;
+}
