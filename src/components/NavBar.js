@@ -1,8 +1,8 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { IoMenu, IoClose } from 'react-icons/io5'; // Use IoMenu for hamburger icon
-import './NavBar.scss'; // Import the SCSS file for styling
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnchor, faTimes } from '@fortawesome/free-solid-svg-icons'; // Import Font Awesome icons
 import './NavBar.css'; // Import the CSS file for styling
 
 const Navbar = () => {
@@ -29,7 +29,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
-                    {isMobileMenuOpen ? <IoClose size={30} /> : <IoMenu size={30} />} {/* Hamburger icon */}
+                    {isMobileMenuOpen ? (
+                        <FontAwesomeIcon icon={faTimes} size="2x" color="#ffcc00" /> // Close icon
+                    ) : (
+                        <FontAwesomeIcon icon={faAnchor} size="2x" color="#ffcc00" /> // Anchor icon
+                    )}
                 </div>
             </div>
 
