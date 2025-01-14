@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Goals:
 
 Provide a seamless user experience for music and video streaming.
@@ -42,3 +43,7 @@ Compliance and Licensing:
 
 Ensure compliance with copyright laws and obtain necessary licenses for content streaming.
 Regular audits to maintain adherence to legal requirements.
+=======
+# yellow-sail
+Music and Videos WebApp.
+>>>>>>> a0ffc7804911bd8cd522cd0e8eba778cb3545174
