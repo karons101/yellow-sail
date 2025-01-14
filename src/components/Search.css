@@ -1,0 +1,29 @@
+/* src/components/Search.css */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffcc00; /* Yellow border */
+    border-radius: 25px; /* Rounded corners */
+    overflow: hidden; /* Prevents overflow */
+    background-color: #fff; /* White background */
+}
+
+.search-input {
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for input */
+    outline: none; /* Remove outline */
+    flex: 1; /* Take up available space */
+}
+
+.search-button {
+    background-color: #ffcc00; /* Yellow background */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.search-button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}

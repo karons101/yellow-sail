@@ -1,0 +1,27 @@
+/* src/components/MusicGallery.css */
+
+.music-gallery {
+    flex: 1; /* Take up available space */
+    padding: 20px;
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.music-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between; /* Space between items */
+}
+
+.music-item {
+    width: 30%; /* Each item takes up 30% of the width */
+    margin-bottom: 20px; /* Space below each item */
+    text-align: center; /* Center text */
+}
+
+.music-item img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+}

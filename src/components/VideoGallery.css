@@ -1,0 +1,40 @@
+/* src/components/VideoGallery.css */
+
+.video-gallery {
+    flex: 1; /* Take up available space */
+    padding: 20px;
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.video-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between; /* Space between items */
+}
+
+.video-item {
+    width: 30%; /* Each item takes up 30% of the width */
+    margin-bottom: 20px; /* Space below each item */
+    text-align: center; /* Center text */
+}
+
+.video-item img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-item {
+        width: 45%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-item {
+        width: 100%; /* Stack items on very small screens */
+    }
+}

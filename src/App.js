@@ -8,37 +8,52 @@ import Profile from './components/Profile'; // Profile component
 import Login from './components/Login'; // Login component
 import Register from './components/Register'; // Register component
 import MediaPlayer from './components/MediaPlayer'; // MediaPlayer component
-import VideoGallery from './components/VideoGallary'; // VideoGallery component
-import MusicGallery from './components/MusicGallary'; // MusicGallery component
+import VideoGallery from './components/VideoGallery'; // VideoGallery component
+import MusicGallery from './components/MusicGallery'; // MusicGallery component
+import MediaGallery from './components/MediaGallery'; // MediaGallery component
 import Upload from './components/Upload'; // Upload component
 import Favorites from './components/Favorites'; // Favorites component
 import Comments from './components/Comments'; // Comments component
 import Notifications from './components/Notifications'; // Notifications component
 import Settings from './components/Settings'; // Settings component
 import NotFound from './components/NotFound'; // NotFound component for 404 pages
+import Search from './components/Search'; // Import the Search component
+import Footer from './components/Footer'; // Import the Footer component
+import './App.css'; // Import your main CSS file for overall styling
 
 function App() {
-  return (
-    <Router>
-      <Header /> {/* Header includes NavBar */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/playlist" element={<Playlist />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/media-player" element={<MediaPlayer />} />
-        <Route path="/video-gallery" element={<VideoGallery />} />
-        <Route path="/music-gallery" element={<MusicGallery />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/comments" element={<Comments />} />
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 pages */}
-      </Routes>
-    </Router>
-  );
+    const handleSearch = (query) => {
+        console.log('Search query:', query);
+        // Implement your search logic here
+    };
+
+    return (
+        <Router>
+            <Header />
+            <div className="app-content">
+                <Search placeholder="Search for music..." onSearch={handleSearch} />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/playlist" element={<Playlist />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/media" element={<MediaGallery />} /> {/* Route for MediaGallery */}
+                    <Route path="/media-player" element={<MediaPlayer />} />
+                    <Route path="/video-gallery" element={<VideoGallery />} />
+                    <Route path="/music-gallery" element={<MusicGallery />} />
+                    <Route path="/upload" element={<Upload />} />
+                    <Route path="/favorites" element={<Favorites />} />
+                    <Route path="/comments" element={<Comments />} />
+                    <Route path="/notifications" element={<Notifications />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 pages */}
+                </Routes>
+            </div>
+            <MediaPlayer /> {/* Always visible media player at the bottom */}
+            <Footer /> {/* Include the Footer component here */}
+        </Router>
+    );
 }
 
 export default App;

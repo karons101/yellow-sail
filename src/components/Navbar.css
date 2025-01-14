@@ -21,7 +21,7 @@
 }
 
 .logo img {
-    width: 50px; /* Adjust logo size */
+    width: 40px; /* Adjust logo size */
 }
 
 .navigation {
@@ -67,6 +67,7 @@
     text-align: center; /* Center text */
     color: #333; /* Dark color for links */
     text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and color */
 }
 
 .mobile-dropdown a:hover {

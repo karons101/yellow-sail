@@ -1,15 +1,51 @@
 /* src/components/Home.css */
-.home {
-    padding: 2rem;
-    text-align: center;
+
+.video-section {
+    margin-top: 20px; /* Space above the video section */
+    text-align: center; /* Center align text */
 }
 
-.home h2 {
-    font-size: 2rem;
-    color: #333;
+.video-thumbnails {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-around; /* Space out thumbnails */
+    margin-bottom: 20px; /* Space below the thumbnails */
 }
 
-.home p {
-    font-size: 1.2rem;
-    color: #666;
+.video-thumbnail {
+    width: 30%; /* Each thumbnail takes up 30% of the width */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.thumbnail-container {
+    position: relative; /* Position relative for absolute positioning of play button */
+}
+
+.thumbnail-container img {
+    width: 100%; /* Make images responsive */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.play-button {
+    position: absolute; /* Position the play button over the thumbnail */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    font-size: 35px; /* Size of the play button */
+    color: white; /* Color of the play button */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 50%; /* Round button */
+    padding: 10px; /* Padding around the button */
+}
+
+.view-more-button {
+    padding: 10px 20px; /* Button padding */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.view-more-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }

@@ -1,14 +1,65 @@
 /* src/components/MediaPlayer.css */
+
 .media-player {
-    padding: 2rem;
+    background-color: #f8f8f8; /* Light background color */
+    padding: 20px; /* Padding around the component */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Margin above and below the component */
 }
 
-.media-player h2 {
-    font-size: 2rem;
-    color: #333;
+.controls {
+    margin-bottom: 15px; /* Space below the controls */
 }
 
-.media-player p {
-    font-size: 1.2rem;
-    color: #666;
+.track-list {
+    margin-top: 10px; /* Space above the track list */
+}
+
+.track-list button {
+    margin: 5px; /* Space between track buttons */
+    padding: 10px; /* Padding inside the buttons */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.track-list button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.volume-control {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+}
+
+.volume-control img {
+    width: 24px; /* Set width for the volume icon */
+    margin-right: 10px; /* Space between icon and slider */
+}
+
+input[type="range"] {
+    width: 100%; /* Full width for the volume slider */
+    margin: 0; /* Remove default margin */
+}
+
+/* Optional: Style for the volume slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+    width: 15px; /* Width of the thumb */
+    height: 15px; /* Height of the thumb */
+    background: #007bff; /* Color of the thumb */
+    border-radius: 50%; /* Round thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px; /* Width of the thumb */
+    height: 15px; /* Height of the thumb */
+    background: #007bff; /* Color of the thumb */
+    border-radius: 50%; /* Round thumb */
+    cursor: pointer; /* Pointer cursor on hover */
 }

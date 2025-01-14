@@ -1,65 +1,74 @@
 /* src/components/Footer.css */
+
 .footer {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
     text-align: center;
+    border-top: 1px solid #ccc;
 }
 
-.footer__links {
-    margin-bottom: 1.5rem;
+.footer-content {
+    max-width: 1200px; /* Optional: Limit the width of the footer content */
+    margin: 0 auto; /* Center the footer content */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align items */
 }
 
-.footer__links h3,
-.footer__social h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+.footer-links {
+    margin-bottom: 15px; /* Space between sections */
 }
 
-.footer__links ul {
-    list-style: none;
-    padding: 0;
+.footer-links nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
 }
 
-.footer__links li {
-    margin: 0.5rem 0;
+.footer-links nav ul li {
+    display: inline; /* Display items in a line */
+    margin: 0 10px; /* Space between items */
 }
 
-.footer__links a {
-    text-decoration: none;
-    color: #007bff;
+.footer-links nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Link color */
 }
 
-.footer__links a:hover {
-    text-decoration: underline;
+.footer-links nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
-.footer__social {
-    margin-top: 1.5rem;
+.footer-social {
+    margin-top: 10px; /* Space above social section */
+}
+
+.footer-social p {
+    margin: 5px 0; /* Space around the text */
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem; /* Space between icons */
-    margin-bottom: 1rem;
+    margin-top: 5px; /* Space above social icons */
 }
 
 .social-icons a {
-    color: #333; /* Icon color */
-    font-size: 1.5rem; /* Icon size */
+    margin: 0 10px; /* Space between social icons */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Link color */
 }
 
-.footer p {
-    margin: 0;
-    font-size: 1rem;
-    color: #666;
+.social-icons a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
-/* Style for the love icon */
-.love-icon {
-    color: yellow; /* Change the color to yellow */
-    font-size: 1.2rem; /* Adjust size if needed */
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections on smaller screens */
+        align-items: center; /* Center align items */
+    }
+
+    .footer-links nav ul li {
+        display: block; /* Stack links vertically on small screens */
+        margin: 5px 0; /* Space between links */
+    }
 }

@@ -1,0 +1,14 @@
+/* src/components/MediaGallery.css */
+
+.media-gallery {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the two galleries */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    margin: 20px; /* Margin around the gallery */
+}
+
+@media (max-width: 768px) {
+    .media-gallery {
+        flex-direction: column; /* Stack sections on smaller screens */
+    }
+}
