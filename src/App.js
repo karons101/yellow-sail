@@ -6,6 +6,8 @@ import Home from './components/Home'; // Home component
 import Playlist from './components/Playlist'; // Playlist component
 import Profile from './components/Profile'; // Profile component
 import Login from './components/Login'; // Login component
+import Logout from './components/Logout'; // Adjust the path if necessary
+import ForgotPassword from './components/ForgotPassword'; // Adjust the path if necessary
 import Register from './components/Register'; // Register component
 import MediaPlayer from './components/MediaPlayer'; // MediaPlayer component
 import VideoGallery from './components/VideoGallery'; // VideoGallery component
@@ -41,6 +43,8 @@ function App() {
                         <Route path="/playlist" element={<Playlist />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/login" element={<Login />} />
+                        <Route path="/logout" element={<Logout />} />
+                        <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Add this line */}
                         <Route path="/register" element={<Register />} />
                         <Route path="/media" element={<MediaGallery />} /> {/* Route for MediaGallery */}
                         <Route path="/media-player" element={<MediaPlayer />} />
