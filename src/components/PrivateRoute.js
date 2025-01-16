@@ -1,10 +1,10 @@
 // src/components/PrivateRoute.js
-import React, { useContext } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { AuthContext } from './AuthProvider'; // Adjust the path if necessary
+import { useAuth } from '../context/AuthContext'; // Ensure this path is correct
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading } = useContext(AuthContext);
+    const { user, loading } = useAuth();
 
     if (loading) {
         return <div>Loading...</div>; // Optional: You can add a loading spinner here
