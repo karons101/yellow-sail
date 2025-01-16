@@ -1,7 +1,7 @@
 // src/components/Register.js
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import auth from '../firebaseConfig'; // Adjust the path if necessary
+import { auth } from '../firebaseConfig'; // Ensure this is a named import
 import './Auth.css'; // Optional: Create a CSS file for styling
 
 const Register = () => {
@@ -17,11 +17,16 @@ const Register = () => {
 
         try {
             await createUserWithEmailAndPassword(auth, email, password);
-            setSuccess('Registration successful! You can now log in.');
+            setSuccess('Registration successful!'); // Optionally set a success message
             setEmail(''); // Clear the email input
             setPassword(''); // Clear the password input
         } catch (err) {
-            setError(err.message); // Display the error message from Firebase
+            // Handle specific error messages
+            if (err.code === 'auth/invalid-api-key') {
+                setError('Invalid API key. Please check your Firebase configuration.');
+            } else {
+                setError(err.message); // Display the error message from Firebase
+            }
             setSuccess('');
         }
     };

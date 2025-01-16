@@ -1,7 +1,7 @@
 // src/components/ForgotPassword.js
 import React, { useState } from 'react';
 import { sendPasswordResetEmail } from 'firebase/auth';
-import auth from '../firebaseConfig'; // Adjust the path if necessary
+import { auth } from '../firebaseConfig'; // Change to named import
 import './Auth.css'; // Optional: Create a CSS file for styling
 
 const ForgotPassword = () => {

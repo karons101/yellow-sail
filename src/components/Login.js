@@ -1,7 +1,8 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import auth from '../firebaseConfig'; // Adjust the path if necessary
+import { auth } from '../firebaseConfig'; // Ensure this is a named import
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Auth.css'; // Optional: Create a CSS file for styling
 
 const Login = ({ setToken }) => {
@@ -21,7 +22,6 @@ const Login = ({ setToken }) => {
             setEmail(''); // Clear the email input
             setPassword(''); // Clear the password input
             // You can set a token or perform other actions after successful login
-            // For example, you might want to redirect the user or update the app state
         } catch (err) {
             setError('Invalid email or password'); // Display a user-friendly error message
             setSuccess('');
@@ -50,6 +50,9 @@ const Login = ({ setToken }) => {
                 />
                 <button type="submit">Login</button>
             </form>
+            <p>
+                <Link to="/forgot-password">Forgot Password?</Link> {/* Link to Forgot Password page */}
+            </p>
         </div>
     );
 };
