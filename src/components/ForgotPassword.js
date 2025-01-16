@@ -1,55 +1,46 @@
-// src/components/Register.js
+// src/components/ForgotPassword.js
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { sendPasswordResetEmail } from 'firebase/auth';
 import auth from '../firebaseConfig'; // Adjust the path if necessary
 import './Auth.css'; // Optional: Create a CSS file for styling
 
-const Register = () => {
+const ForgotPassword = () => {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleResetPassword = async (e) => {
         e.preventDefault();
         setError(''); // Clear previous errors
         setSuccess(''); // Clear previous success messages
 
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
-            setSuccess('Registration successful! You can now log in.');
+            await sendPasswordResetEmail(auth, email);
+            setSuccess('Password reset email sent! Please check your inbox.'); // Success message
             setEmail(''); // Clear the email input
-            setPassword(''); // Clear the password input
         } catch (err) {
-            setError(err.message); // Display the error message from Firebase
+            setError('Error sending password reset email. Please check the email address.'); // Error message
             setSuccess('');
         }
     };
 
     return (
         <div className="auth-container">
-            <h2>Register</h2>
+            <h2>Reset Password</h2>
             {error && <p className="error">{error}</p>}
             {success && <p className="success">{success}</p>}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleResetPassword}>
                 <input
                     type="email"
-                    placeholder="Email"
+                    placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit">Register</button>
+                <button type="submit">Send Password Reset Email</button>
             </form>
         </div>
     );
 };
 
-export default Register;
+export default ForgotPassword;
