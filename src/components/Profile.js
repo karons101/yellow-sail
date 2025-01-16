@@ -1,6 +1,6 @@
 // src/components/Profile.js
 import React, { useEffect, useState } from 'react';
-import { auth, db } from './firebase'; // Import your Firebase config
+import { auth, db } from '../firebaseConfig'; // Import both auth and db
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 const Profile = () => {
@@ -10,9 +10,10 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchUserProfile = async () => {
-            const currentUser  = auth.currentUser ;
+            const currentUser  = auth.currentUser ; // Remove whitespace warning
             if (currentUser ) {
                 const userDoc = await getDoc(doc(db, 'profiles', currentUser.uid));
+
                 if (userDoc.exists()) {
                     setUsername(userDoc.data().username);
                     setEmail(currentUser.email);
