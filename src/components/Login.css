@@ -1,7 +1,7 @@
 /* src/components/Login.css */
 .login {
     padding: 2rem;
-    max-width: 400px;
+    max-width: 400px; /* Set a reasonable max-width for the login form */
     margin: auto;
 }
 
@@ -20,6 +20,8 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 100%; /* Make input fields take full width of the container */
+    max-width: 300px; /* Set a maximum width for the input fields */
 }
 
 .login button {

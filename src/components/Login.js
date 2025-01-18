@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebaseConfig'; // Ensure this is a named import
 import { Link } from 'react-router-dom'; // Import Link for navigation
-import './Auth.css'; // Optional: Create a CSS file for styling
+import './Login.css'; // Ensure this is the correct CSS file for styling
 
 const Login = ({ setToken }) => {
     const [email, setEmail] = useState('');
@@ -29,13 +29,14 @@ const Login = ({ setToken }) => {
     };
 
     return (
-        <div className="auth-container">
+        <div className="auth-container login"> {/* Add the 'login' class here */}
             <h2>Login</h2>
             {error && <p className="error">{error}</p>}
             {success && <p className="success">{success}</p>}
             <form onSubmit={handleSubmit}>
                 <input
                     type="email"
+                    className="input-field email-input" // Add class for styling
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -43,6 +44,7 @@ const Login = ({ setToken }) => {
                 />
                 <input
                     type="password"
+                    className="input-field password-input" // Add class for styling
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

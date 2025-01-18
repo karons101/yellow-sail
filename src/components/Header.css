@@ -1,15 +1,44 @@
 /* src/components/Header.css */
+
 header {
     text-align: center;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
     padding: 1rem;
     background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.logo {
+    margin-bottom: 1rem; /* Adjusted space below the logo */
+}
+
 h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem; /* Adjusted size for better balance */
+    color: #ffcc00; /* Set the color of the h1 to yellow */
+}
+
+.tagline {
+    margin-top: 0.5rem; /* Reduced margin for better spacing */
+}
+
+.adventure-text {
+    font-size: 1.5rem; /* Adjusted font size for the tagline */
+    font-weight: bold; /* Make the text bold */
+    font-style: italic; /* Make the text italic */
+    color: black; /* Set the text color to black */
+    display: inline-block; /* Ensure it behaves like a block for spacing */
+}
+
+/* Optional: Add some responsive design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem; /* Smaller font size on smaller screens */
+    }
+
+    .adventure-text {
+        font-size: 1.2rem; /* Smaller font size for tagline on smaller screens */
+    }
 }

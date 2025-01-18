@@ -21,11 +21,18 @@ const Footer = () => {
                     </nav>
                 </div>
                 <div className="footer-social">
-                    <p>Built with Love from Karons <span role="img" aria-label="yellow heart">💛</span></p>
+                    
                     <div className="social-icons">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                       <i className="fab fa-facebook-f"></i></a>
+                    
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                       <i className="fab fa-twitter"></i></a>
+
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                       <i className="fab fa-instagram"></i></a>
+
+                        <p>Built with Love from Karons <span role="img" aria-label="yellow heart">💛</span></p>
                     </div>
                 </div>
             </div>

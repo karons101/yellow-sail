@@ -3,7 +3,7 @@
 /* Navbar styles */
 .navbar {
     width: 100%;
-    min-height: 6vh; /* Minimum height of the navbar */
+    min-height: 3vh; /* Minimum height of the navbar */
     box-sizing: border-box;
     display: flex;
     justify-content: space-between; /* Space between logo and navigation */

@@ -1,7 +1,7 @@
 /* src/components/Footer.css */
 
 .footer {
-    background-color: #f8f8f8;
+    background-color: #08080800;
     padding: 20px;
     text-align: center;
     border-top: 1px solid #ccc;
@@ -51,13 +51,17 @@
 }
 
 .social-icons a {
-    margin: 0 10px; /* Space between social icons */
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Link color */
+    margin: 0 10px; /* Space between icons */
+    color: #000; /* Default color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Increased icon size */
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 .social-icons a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: none; /* Underline on hover */
+    font-size: 15px; /* Increased icon size */
+    color: #ffcc00; /* Change color on hover */
 }
 
 /* Responsive styles */

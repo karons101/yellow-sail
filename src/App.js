@@ -24,7 +24,9 @@ import Search from './components/Search'; // Import the Search component
 import Footer from './components/Footer'; // Import the Footer component
 import { AuthProvider } from './context/AuthContext'; // Import the AuthProvider
 import Dashboard from './components/Dashboard'; // Dashboard component for registered users
-import './App.css'; // Import your main CSS file for overall styling
+import News from './components/News'; // Import the News component
+import About from './components/About'; // Import the About component
+import './App.css'; // Import the main CSS file for overall styling
 
 function App() {
     const handleSearch = (query) => {
@@ -50,6 +52,7 @@ function App() {
                         <Route path="/media-player" element={<MediaPlayer />} />
                         <Route path="/video-gallery" element={<VideoGallery />} />
                         <Route path="/music-gallery" element={<MusicGallery />} />
+                        <Route path="/about" element={<About />} /> {/* New route for the About page */}
                         <Route path="/upload" element={
                             <PrivateRoute>
                                 <Upload />
@@ -80,6 +83,7 @@ function App() {
                                 <Dashboard />
                             </PrivateRoute>
                         } />
+                        <Route path="/news" element={<News />} /> {/* New route for the News page */}
                         <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 pages */}
                     </Routes>
                 </div>

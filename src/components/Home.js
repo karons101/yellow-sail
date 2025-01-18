@@ -1,5 +1,6 @@
 // src/components/Home.js
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Home.css'; // Import your CSS for styling
 
 const Home = () => {
@@ -34,7 +35,10 @@ const Home = () => {
                         <h3>DavidO song</h3>
                     </div>
                 </div>
+                {/* Updated View More Videos Button */}
+                <Link to="/video-gallery">
                 <button className="view-more-button">View More Videos</button>
+                </Link>
             </div>
         </div>
     );
