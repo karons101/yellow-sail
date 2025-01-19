@@ -1,51 +1,115 @@
 /* src/components/Home.css */
 
+.home {
+    padding: 20px; /* General padding for the home component */
+    font-family: Arial, sans-serif; /* Font family for the text */
+}
+
+/* Video Section */
 .video-section {
     margin-top: 20px; /* Space above the video section */
     text-align: center; /* Center align text */
 }
 
+/* Thumbnails Container */
 .video-thumbnails {
     display: flex; /* Use flexbox for layout */
-    justify-content: space-around; /* Space out thumbnails */
+    justify-content: center; /* Center thumbnails */
+    flex-wrap: wrap; /* Allow thumbnails to wrap to the next line */
     margin-bottom: 20px; /* Space below the thumbnails */
+    gap: 20px; /* Space between thumbnails */
 }
 
+/* Individual Thumbnail */
 .video-thumbnail {
-    width: 30%; /* Each thumbnail takes up 30% of the width */
+    width: 150px; /* Fixed width for each thumbnail */
     cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s; /* Smooth scaling effect */
 }
 
+.video-thumbnail:hover {
+    transform: scale(1.05); /* Slightly enlarge thumbnail on hover */
+}
+
+/* Thumbnail Container */
 .thumbnail-container {
     position: relative; /* Position relative for absolute positioning of play button */
 }
 
+/* Thumbnail Image */
 .thumbnail-container img {
     width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Rounded corners */
 }
 
+/* Play Button */
 .play-button {
     position: absolute; /* Position the play button over the thumbnail */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for centering */
     font-size: 35px; /* Size of the play button */
-    color: white; /* Color of the play button */
+    color: rgba(235, 235, 16, 0.884); /* Color of the play button */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     border-radius: 50%; /* Round button */
     padding: 10px; /* Padding around the button */
+    transition: background-color 0.3s; /* Smooth background color transition */
 }
 
+.play-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+}
+
+/* Video Modal Styles */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Max width for the video player */
+}
+
+/* Video Player */
+.modal-video {
+    width: 100%; /* Make video responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* View More Button */
 .view-more-button {
     padding: 10px 20px; /* Button padding */
-    background-color: #007bff; /* Button background color */
+    background-color: #ffcc00; /* Use your specified yellow */
     color: white; /* Button text color */
     border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+    transition: background-color 0.3s; /* Smooth background color transition */
 }
 
 .view-more-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #e6b800; /* Darker shade on hover */
 }
