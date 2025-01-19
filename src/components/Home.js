@@ -19,7 +19,7 @@ const Home = () => {
             <div className="video-section">
                 <h2>Featured Videos</h2>
                 <div className="video-thumbnails">
-                    <div className="video-thumbnail" onClick={() => handleVideoClick('/videos/house-by-nature.mp4')}>
+                    <div className="video-thumbnail" onClick={() => handleVideoClick('/videos/house-on-nature.mp4')}>
                         <div className="thumbnail-container">
                             <img src="/thumbnails/house-on-nature-thumbnail.jpg" alt="House on Nature" />
                             <div className="play-button">▶</div>
