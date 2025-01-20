@@ -6,8 +6,28 @@ import './Home.css'; // Import your CSS for styling
 const Home = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
 
+    // Array of video data
+    const videos = [
+        {
+            title: "House on Nature",
+            videoSrc: "/videos/house-on-nature-480p.mp4",
+            thumbnail: "/thumbnails/house-on-nature-360.jpg"
+        },
+        {
+            title: "Boat Sail",
+            videoSrc: "/videos/boat-sail-480p.mp4",
+            thumbnail: "/thumbnails/boat-sail-360.jpg"
+        },
+        {
+            title: "Two Boats Sail",
+            videoSrc: "/videos/two-boats-sail-480p.mp4",
+            thumbnail: "/thumbnails/two-boats-sail-360.jpg"
+        }
+    ];
+
     const handleVideoClick = (videoSrc) => {
-        setSelectedVideo(videoSrc);
+        // If the same video is clicked again, toggle it off
+        setSelectedVideo(selectedVideo === videoSrc ? null : videoSrc);
     };
 
     return (
@@ -19,27 +39,15 @@ const Home = () => {
             <div className="video-section">
                 <h2>Featured Videos</h2>
                 <div className="video-thumbnails">
-                    <div className="video-thumbnail" onClick={() => handleVideoClick('/videos/house-on-nature.mp4')}>
-                        <div className="thumbnail-container">
-                            <img src="/thumbnails/house-on-nature-thumbnail.jpg" alt="House on Nature" />
-                            <div className="play-button">▶</div>
+                    {videos.map((video, index) => (
+                        <div className="video-thumbnail" key={index} onClick={() => handleVideoClick(video.videoSrc)}>
+                            <div className="thumbnail-container">
+                                <img src={video.thumbnail} alt={video.title} />
+                                <div className="play-button">▶</div>
+                            </div>
+                            <h3>{video.title}</h3>
                         </div>
-                        <h3>House on Nature</h3>
-                    </div>
-                    <div className="video-thumbnail" onClick={() => handleVideoClick('/videos/video2.mp4')}>
-                        <div className="thumbnail-container">
-                            <img src="/thumbnails/video2-thumbnail.jpg" alt="Video 2" />
-                            <div className="play-button">▶</div>
-                        </div>
-                        <h3>Elder skit</h3>
-                    </div>
-                    <div className="video-thumbnail" onClick={() => handleVideoClick('/videos/video3.mp4')}>
-                        <div className="thumbnail-container">
-                            <img src="/thumbnails/video3-thumbnail.jpg" alt="Video 3" />
-                            <div className="play-button">▶</div>
-                        </div>
-                        <h3>DavidO song</h3>
-                    </div>
+                    ))}
                 </div>
                 {/* Updated View More Videos Button */}
                 <Link to="/video-gallery">
@@ -47,18 +55,15 @@ const Home = () => {
                 </Link>
             </div>
 
-            {/* Video Player Modal */}
-            {selectedVideo && (
-                <div className="video-modal">
-                    <div className="modal-content">
-                        <span className="close" onClick={() => setSelectedVideo(null)}>&times;</span>
-                        <video controls aria-label="Selected Video" className="modal-video">
-                            <source src={selectedVideo} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            )}
+            {/* Video Player - Always displayed below the thumbnails */}
+            <div className="video-player">
+                {selectedVideo && (
+                    <video controls aria-label="Selected Video" className="inline-video">
+                        <source src={selectedVideo} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                )}
+            </div>
         </div>
     );
 };

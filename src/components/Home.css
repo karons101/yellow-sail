@@ -50,7 +50,7 @@
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for centering */
     font-size: 35px; /* Size of the play button */
-    color: rgba(235, 235, 16, 0.884); /* Color of the play button */
+    color: white; /* Color of the play button */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     border-radius: 50%; /* Round button */
     padding: 10px; /* Padding around the button */
@@ -61,41 +61,15 @@
     background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
 }
 
-/* Video Modal Styles */
-.video-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Max width for the video player */
-}
-
 /* Video Player */
-.modal-video {
-    width: 100%; /* Make video responsive */
-    height: auto; /* Maintain aspect ratio */
+.video-player {
+    margin-top: 20px; /* Space above the video player */
+    text-align: center; /* Center align video player */
 }
 
-/* Close Button */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+.inline-video {
+    width: 320px; /* Set a fixed width for the video player */
+    height: auto; /* Maintain aspect ratio */
 }
 
 /* View More Button */
