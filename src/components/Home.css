@@ -23,23 +23,22 @@
 /* Individual Thumbnail */
 .video-thumbnail {
     width: 150px; /* Fixed width for each thumbnail */
+    height: 100px; /* Fixed height for each thumbnail */
     cursor: pointer; /* Pointer cursor on hover */
     transition: transform 0.2s; /* Smooth scaling effect */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position relative for absolute positioning of play button */
 }
 
 .video-thumbnail:hover {
     transform: scale(1.05); /* Slightly enlarge thumbnail on hover */
 }
 
-/* Thumbnail Container */
-.thumbnail-container {
-    position: relative; /* Position relative for absolute positioning of play button */
-}
-
 /* Thumbnail Image */
 .thumbnail-container img {
     width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
+    height: 100%; /* Set fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
     border-radius: 5px; /* Rounded corners */
 }
 
@@ -68,8 +67,9 @@
 }
 
 .inline-video {
-    width: 320px; /* Set a fixed width for the video player */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Make video responsive */
+    max-width: 640px; /* Set a max width for the video player */
+    height: 360px; /* Fixed height for the video player */
 }
 
 /* View More Button */

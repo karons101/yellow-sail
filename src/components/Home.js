@@ -42,7 +42,7 @@ const Home = () => {
                     {videos.map((video, index) => (
                         <div className="video-thumbnail" key={index} onClick={() => handleVideoClick(video.videoSrc)}>
                             <div className="thumbnail-container">
-                                <img src={video.thumbnail} alt={video.title} />
+                                <img src={video.thumbnail} alt={video.title} className="thumbnail-image" />
                                 <div className="play-button">▶</div>
                             </div>
                             <h3>{video.title}</h3>

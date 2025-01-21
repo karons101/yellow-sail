@@ -26,6 +26,7 @@ import { AuthProvider } from './context/AuthContext'; // Import the AuthProvider
 import Dashboard from './components/Dashboard'; // Dashboard component for registered users
 import News from './components/News'; // Import the News component
 import About from './components/About'; // Import the About component
+import ImageUploader from './components/ImageUploader'; // Import the ImageUploader component
 import './App.css'; // Import the main CSS file for overall styling
 
 function App() {
@@ -58,6 +59,11 @@ function App() {
                                 <Upload />
                             </PrivateRoute>
                         } />
+                        <Route path="/image-uploader" element={
+                            <PrivateRoute>
+                                <ImageUploader />
+                            </PrivateRoute>
+                        } /> {/* New route for the Image Uploader */}
                         <Route path="/favorites" element={
                             <PrivateRoute>
                                 <Favorites />
