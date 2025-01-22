@@ -20,7 +20,7 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%; /* Make input fields take full width of the container */
+    
     max-width: 200px; /* Set a maximum width for the input fields */
 }
 

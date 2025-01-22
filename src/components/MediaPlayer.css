@@ -2,37 +2,56 @@
 
 .media-player {
     background-color: #f8f8f8; /* Light background color */
-    padding: 20px; /* Padding around the component */
+    padding: 15px; /* Padding around the component */
     border: 1px solid #ccc; /* Light border */
     border-radius: 5px; /* Rounded corners */
-    margin: 50px 0; /* Margin above and below the component */
+    margin: 20px 0; /* Margin above and below the component */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.now-playing {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space below the now playing section */
+}
+
+.album-art {
+    width: 50px; /* Fixed width for album art */
+    height: 50px; /* Fixed height for album art */
+    border-radius: 5px; /* Rounded corners for album art */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.track-info {
+    text-align: left; /* Align text to the left */
 }
 
 .controls {
     margin-bottom: 15px; /* Space below the controls */
 }
 
-.track-list {
-    margin-top: 10px; /* Space above the track list */
+.progress-bar {
+    width: 100%; /* Full width for the progress bar */
+    height: 4px; /* Height for the progress bar */
+    background-color: #e0e0e0; /* Background color for the progress bar */
+    border-radius: 2px; /* Rounded corners for the progress bar */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position for inner progress */
 }
 
-.track-list button {
-    margin: 5px; /* Space between track buttons */
-    padding: 10px; /* Padding inside the buttons */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-.track-list button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.progress {
+    height: 100%; /* Full height for the inner progress */
+    background-color: #007bff; /* Color of the progress */
+    width: 0%; /* Start with 0% width */
+    transition: width 0.2s; /* Smooth transition for progress */
 }
 
 .volume-control {
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center items vertically */
+    margin-top: 10px; /* Space above the volume control */
 }
 
 .volume-control img {

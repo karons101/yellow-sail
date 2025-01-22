@@ -1,7 +1,7 @@
 /* src/components/Register.css */
 .register {
     padding: 2rem;
-    max-width: 400px;
+    max-width: 300px;
     margin: auto;
 }
 
@@ -13,6 +13,7 @@
 .register form {
     display: flex;
     flex-direction: column;
+    
 }
 
 .register input {
@@ -20,10 +21,15 @@
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    
+    max-width: 200px; /* Set a maximum width for the input fields */
 }
 
 .register button {
     padding: 0.5rem;
+    max-width: 100px;
+    margin-left: 63px;
+    margin-top: 3px;
     background-color: #28a745;
     color: white;
     border: none;

@@ -1,4 +1,3 @@
-// src/components/Home.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Home.css'; // Import your CSS for styling
@@ -33,14 +32,21 @@ const Home = () => {
     return (
         <div className="home">
             <h1>Welcome to Yellow Sail</h1>
-            <p>Discover your favorite music and videos!</p>
+            <p>Explore your favorite music and videos!</p>
 
             {/* Video Section */}
             <div className="video-section">
                 <h2>Featured Videos</h2>
                 <div className="video-thumbnails">
                     {videos.map((video, index) => (
-                        <div className="video-thumbnail" key={index} onClick={() => handleVideoClick(video.videoSrc)}>
+                        <div 
+                            className="video-thumbnail" 
+                            key={index} 
+                            onClick={() => handleVideoClick(video.videoSrc)}
+                            role="button" // Accessibility improvement
+                            tabIndex={0} // Make it focusable
+                            onKeyPress={(e) => e.key === 'Enter' && handleVideoClick(video.videoSrc)} // Handle keyboard interaction
+                        >
                             <div className="thumbnail-container">
                                 <img src={video.thumbnail} alt={video.title} className="thumbnail-image" />
                                 <div className="play-button">▶</div>
@@ -55,10 +61,10 @@ const Home = () => {
                 </Link>
             </div>
 
-            {/* Video Player - Always displayed below the thumbnails */}
+            {/* Video Player - Displayed in the same position as the thumbnail */}
             <div className="video-player">
                 {selectedVideo && (
-                    <video controls aria-label="Selected Video" className="inline-video">
+                    <video controls aria-label="Selected Video" className="inline-video" autoPlay>
                         <source src={selectedVideo} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
