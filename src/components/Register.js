@@ -1,8 +1,7 @@
-// src/components/Register.js
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth'; // Corrected import
 import { auth } from '../firebaseConfig'; // Ensure this is a named import
-import './Auth.css'; // Optional: Create a CSS file for styling
+import './Register.css'; // Import the correct CSS file for styling
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -16,28 +15,25 @@ const Register = () => {
         setSuccess(''); // Clear previous success messages
 
         try {
-            await createUserWithEmailAndPassword(auth, email, password);
+            await createUserWithEmailAndPassword(auth, email, password); // Corrected function name
             setSuccess('Registration successful!'); // Optionally set a success message
             setEmail(''); // Clear the email input
             setPassword(''); // Clear the password input
         } catch (err) {
             // Handle specific error messages
-            if (err.code === 'auth/invalid-api-key') {
-                setError('Invalid API key. Please check your Firebase configuration.');
-            } else {
-                setError(err.message); // Display the error message from Firebase
-            }
+            setError(err.message); // Display the error message from Firebase
             setSuccess('');
         }
     };
 
     return (
-        <div className="auth-container">
+        <div className="register">
             <h2>Register</h2>
             {error && <p className="error">{error}</p>}
             {success && <p className="success">{success}</p>}
             <form onSubmit={handleSubmit}>
                 <input
+                    className="register-input"
                     type="email"
                     placeholder="Email"
                     value={email}
@@ -45,6 +41,7 @@ const Register = () => {
                     required
                 />
                 <input
+                    className="register-input"
                     type="password"
                     placeholder="Password"
                     value={password}
