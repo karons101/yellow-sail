@@ -9,17 +9,17 @@ const Home = () => {
     const videos = [
         {
             title: "House on Nature",
-            videoSrc: "/videos/house-on-nature-480p.mp4",
+            videoSrc: "/videos/house-on-nature-480p-compressed.mp4",
             thumbnail: "/thumbnails/house-on-nature-360.jpg"
         },
         {
             title: "Boat Sail",
-            videoSrc: "/videos/boat-sail-480p.mp4",
+            videoSrc: "/videos/boat-sail-480p-compressed.mp4",
             thumbnail: "/thumbnails/boat-sail-360.jpg"
         },
         {
             title: "Two Boats Sail",
-            videoSrc: "/videos/two-boats-sail-480p.mp4",
+            videoSrc: "/videos/two-boats-sail-480p-compressed.mp4",
             thumbnail: "/thumbnails/two-boats-sail-360.jpg"
         }
     ];
