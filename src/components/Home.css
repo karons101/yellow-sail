@@ -67,6 +67,19 @@
     border-radius: 5px; /* Rounded corners */
 }
 
+/* Thumbnail Container */
+.thumbnail-container {
+    position: relative; /* Position relative for absolute positioning of video */
+}
+
+/* Inline Video */
+.inline-video {
+    width: 150px; /* Set width to match thumbnail */
+    height: 100px; /* Set height to match thumbnail */
+    object-fit: cover; /* Maintain aspect ratio */
+    pointer-events: auto; /* Allow interaction with the video player */
+}
+
 /* Play Button */
 .play-button {
     position: absolute; /* Position the play button over the thumbnail */
@@ -87,18 +100,20 @@
 
 /* Video Player */
 .video-player {
-    margin-top: 20px; /* Space above the video player */
-    text-align: center; /* Center align video player */
-    position: relative; /* Position relative for absolute positioning if needed */
+    position: absolute; /* Position the video player absolutely */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
     display: flex; /* Use flexbox to center the video */
     justify-content: center; /* Center the video horizontally */
+    pointer-events: none; /* Prevent interaction with the video player when not visible */
 }
 
 /* Inline Video */
 .inline-video {
-    width: 100%; /* Make video responsive */
-    max-width: 350px; /* Set a max width for the video player to match thumbnail */
-    height: auto; /* Maintain aspect ratio */
+    width: 150px; /* Set width to match thumbnail */
+    height: 100px; /* Set height to match thumbnail */
+    object-fit: cover; /* Maintain aspect ratio */
+    pointer-events: auto; /* Allow interaction with the video player */
 }
 
 /* View More Button */

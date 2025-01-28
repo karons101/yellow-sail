@@ -1,9 +1,11 @@
+// src/components/Home.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Home.css'; // Import your CSS for styling
 
 const Home = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
+    
 
     // Array of video data
     const videos = [
@@ -50,6 +52,18 @@ const Home = () => {
                             <div className="thumbnail-container">
                                 <img src={video.thumbnail} alt={video.title} className="thumbnail-image" />
                                 <div className="play-button">▶</div>
+                                {selectedVideo === video.videoSrc && (
+                                    <video 
+                                        controls 
+                                        aria-label="Selected Video" 
+                                        className="inline-video" 
+                                        autoPlay 
+                                        style={{ width: '150px', height: '100px', position: 'absolute', top: 0, left: 0 }} // Position video over thumbnail
+                                    >
+                                        <source src={selectedVideo} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                )}
                             </div>
                             <h3>{video.title}</h3>
                         </div>
@@ -59,16 +73,6 @@ const Home = () => {
                 <Link to="/video-gallery">
                     <button className="view-more-button">View More Videos</button>
                 </Link>
-            </div>
-
-            {/* Video Player - Displayed in the same position as the thumbnail */}
-            <div className="video-player">
-                {selectedVideo && (
-                    <video controls aria-label="Selected Video" className="inline-video" autoPlay>
-                        <source src={selectedVideo} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                )}
             </div>
         </div>
     );
