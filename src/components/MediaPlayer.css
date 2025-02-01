@@ -2,32 +2,42 @@
 
 .media-player {
     background-color: #f8f8f8; /* Light background color */
-    padding: 10px; /* Reduced padding around the component */
+    padding: 5px; /* Reduced padding around the component */
     border: 1px solid #ccc; /* Light border */
     border-radius: 5px; /* Rounded corners */
     margin: 10px 0; /* Reduced margin above and below the component */
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center items horizontally */
-    height: 80px; /* Set a fixed height for the media player */
+    height: 50px; /* Set a fixed height for the media player (slightly reduced) */
 }
 
 .now-playing {
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center items vertically */
-    margin-bottom: 5px; /* Space below the now playing section */
+    width: 100%; /* Full width for the now playing section */
 }
 
 .album-art {
     width: 40px; /* Fixed width for album art */
     height: 40px; /* Fixed height for album art */
     border-radius: 5px; /* Rounded corners for album art */
-    margin-right: 10px; /* Space between image and text */
+    margin-right: 1px; /* Space between image and text */
 }
 
 .track-info {
-    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for track info */
+    flex-direction: column; /* Stack title and artist vertically */
     flex-grow: 1; /* Allow track info to take available space */
+}
+
+.track-title {
+    font-weight: bold; /* Bold title */
+    margin: 0; /* Remove default margin */
+}
+
+.track-artist {
+    margin: 0; /* Remove default margin */
+    font-size: 12px; /* Smaller font size for artist */
 }
 
 .controls {
@@ -37,6 +47,19 @@
     width: 100%; /* Full width for controls */
 }
 
+.play-pause-button {
+    background: none; /* No background */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.progress-container {
+    display: flex; /* Use flexbox for progress bar and timer */
+    align-items: center; /* Center items vertically */
+    flex-grow: 1; /* Allow it to take available space */
+    margin-left: 10px; /* Space between play button and progress bar */
+}
+
 .progress-bar {
     width: 100%; /* Full width for the progress bar */
     height: 4px; /* Height for the progress bar */
@@ -44,11 +67,16 @@
     border-radius: 2px; /* Rounded corners for the progress bar */
     overflow: hidden; /* Hide overflow */
     position: relative; /* Position for inner progress */
+    margin-right: 10px; /* Space between progress bar and timer */
 }
 
 .progress {
     height: 100%; /* Full height for the inner progress */
     background-color: #007bff; /* Color of the progress */
     width: 0%; /* Start with 0% width */
-    transition: width 0.2s; /* Smooth transition for progress */
+}
+
+.timer {
+    font-size: 12px; /* Font size for the timer */
+    white-space: nowrap; /* Prevent timer from wrapping */
 }

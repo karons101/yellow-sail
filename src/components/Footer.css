@@ -15,18 +15,20 @@
     flex-direction: column; /* Stack links and social icons vertically */
     background-color: #333; /* Background color */
     color: white; /* Text color */
-    padding: 10px; /* Padding */
+    padding: 1px 20px; /* Reduced padding for a more compact footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
 }
 
 .footer-links {
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center icons */
     gap: 15px; /* Space between icons */
+    margin: 5px 0; /* Space above and below links */
 }
 
 .footer-links a {
     color: white; /* Icon color */
-    font-size: 10px; /* Icon size */
+    font-size: 14px; /* Icon size */
     text-decoration: none; /* Remove underline */
 }
 
@@ -38,7 +40,7 @@
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack social icons and text vertically */
     align-items: center; /* Center align items */
-    margin-top: 10px; /* Space above social section */
+    margin-top: 5px; /* Space above social section */
 }
 
 .social-icons {
@@ -48,7 +50,7 @@
 
 .social-icons a {
     color: white; /* Icon color */
-    font-size: 10px; /* Icon size */
+    font-size: 12px; /* Icon size */
     text-decoration: none; /* Remove underline */
 }
 
@@ -58,7 +60,7 @@
 }
 
 .footer-social p {
-    margin-top: -1px; /* Space above the text */
-    font-size: 10px;
+    margin-top: 2px; /* Space above the text */
+    font-size: 12px;
     text-align: center; /* Center align text */
 }
