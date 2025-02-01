@@ -32,7 +32,7 @@ import './App.css'; // Import the main CSS file for overall styling
 function App() {
     const handleSearch = (query) => {
         console.log('Search query:', query);
-        // Implement your search logic here
+        //  search logic here
     };
 
     return (
@@ -50,7 +50,6 @@ function App() {
                         <Route path="/forgot-password" element={<ForgotPassword />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/media" element={<MediaGallery />} />
-                        <Route path="/media-player" element={<MediaPlayer />} />
                         <Route path="/video-gallery" element={<VideoGallery />} />
                         <Route path="/music-gallery" element={<MusicGallery />} />
                         <Route path="/about" element={<About />} /> {/* New route for the About page */}
@@ -93,8 +92,8 @@ function App() {
                         <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 pages */}
                     </Routes>
                 </div>
-                <MediaPlayer /> {/* Always visible media player at the bottom */}
                 <Footer /> {/* Include the Footer component here */}
+                <MediaPlayer /> {/* Always visible media player at the bottom */}
             </Router>
         </AuthProvider>
     );

@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './MediaPlayer.css'; // Import your CSS for styling
-import VolumeIcon from '../assets/volume-icon.svg'; // Adjust the path to your volume icon
+import PlayIcon from '../assets/play-icon.svg'; // Adjust the path to your play icon
+import PauseIcon from '../assets/pause-icon.svg'; // Adjust the path to your pause icon
 
 const MediaPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTrack, setCurrentTrack] = useState(null);
-    const [volume, setVolume] = useState(50); // Volume state (0-100)
     const [progress, setProgress] = useState(0); // Progress state
     const audioRef = useRef(null); // Reference to the audio element
 
@@ -53,11 +53,6 @@ const MediaPlayer = () => {
         audioRef.current.play(); // Play the new track
     };
 
-    const handleVolumeChange = (event) => {
-        setVolume(event.target.value);
-        audioRef.current.volume = event.target.value / 100; // Set audio volume
-    };
-
     const updateProgress = () => {
         if (audioRef.current) {
             const currentProgress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
@@ -70,6 +65,12 @@ const MediaPlayer = () => {
         return () => clearInterval(interval); // Cleanup on unmount
     }, [isPlaying]);
 
+    const formatTime = (time) => {
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    };
+
     return (
         <div className="media-player">
             {currentTrack && (
@@ -78,24 +79,20 @@ const MediaPlayer = () => {
                     <div className="track-info">
                         <h3>{currentTrack.title}</h3>
                         <p>{currentTrack.artist}</p>
-                        <p>{currentTrack.album}</p>
                     </div>
                 </div>
             )}
             <div className="controls">
-                <button onClick={handlePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
-                <div className="progress-bar">
-                    <div className="progress" style={{ width: `${progress}%` }}></div>
-                </div>
-                <div className="volume-control">
-                    <img src={VolumeIcon} alt="Volume Control" />
-                    <input
-                        type="range"
-                        min="0"
-                        max="100"
-                        value={volume}
-                        onChange={handleVolumeChange}
-                    />
+                <button onClick={handlePlayPause} className="play-pause-button">
+                    <img src={isPlaying ? PauseIcon : PlayIcon} alt={isPlaying ? 'Pause' : 'Play'} />
+                </button>
+                <div className="progress-container">
+                    <div className="progress-bar">
+                        <div className="progress" style={{ width: `${progress}%` }}></div>
+                    </div>
+                    <span className="timer">
+                        {currentTrack && `${formatTime(audioRef.current.currentTime)} / ${formatTime(audioRef.current.duration)}`}
+                    </span>
                 </div>
             </div>
             <div className="track-list">

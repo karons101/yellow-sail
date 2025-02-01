@@ -6,13 +6,14 @@ import NavBar from './NavBar'; // Import the NavBar component
 const Header = () => {
     return (
         <header className="header">
-            <div className="logo">
-                <img src="/images/yellowwhite.png" alt="Logo" /> {/* Correct path to the logo */}
+            {/*<div className="logo">
+                <img src="/images/kmusic.png" alt="Logo" />  Correct path to the logo 
                 <h1 className="brand-name">Yellow Sail</h1>
-            </div>
+            </div>*/} {/*Leaving this part out for now*/}
+            
             <NavBar /> {/* Include the NavBar component */}
             <div className="tagline">
-                <p className="adventure-text">Set Sail for Adventure!</p> {/* Simple text without spans */}
+                <p>Set Sail for Adventure!</p>
             </div>
         </header>
     );

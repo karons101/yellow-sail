@@ -55,6 +55,9 @@ const Login = ({ setToken }) => {
             <p>
                 <Link to="/forgot-password">Forgot Password?</Link> {/* Link to Forgot Password page */}
             </p>
+            <p>
+                Don't have an account? <Link to="/register">Register here</Link> {/* Link to Register page */}
+            </p>
         </div>
     );
 };

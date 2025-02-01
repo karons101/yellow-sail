@@ -78,11 +78,10 @@
   border: 1px solid #ddd; /* Light border */
   border-radius: 10px; /* Rounded corners */
   padding: 20px; /* Padding */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   position: fixed; /* Fixed position at the bottom */
   left: 0;
   right: 0;
-  bottom: 0; /* Stick to the bottom */
+  bottom: 50px; /* Adjust to sit above the footer */
   z-index: 1000; /* Ensure it appears above other content */
 }
 
@@ -122,9 +121,17 @@
 }
 
 .app-content > * {
-  margin-bottom: 20px; /* Space between components */
+  margin-bottom: 22px; /* Space between components */
 }
 
 footer {
   margin-top: auto; /* Push the footer to the bottom */
+  position: fixed; /* Fix the footer to the bottom */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  background-color: #333; /* Background color */
+  color: white; /* Text color */
+  padding: 10px; /* Padding */
+  z-index: 1000; /* Ensure it appears above other content */
 }

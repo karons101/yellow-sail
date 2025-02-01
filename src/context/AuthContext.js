@@ -3,18 +3,18 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebaseConfig'; // Correctly import the default export
 import { onAuthStateChanged } from 'firebase/auth';
 
-// Create the AuthContext
+// The AuthContext
 const AuthContext = createContext();
 
-// Create a provider component
+// The provider component
 export const AuthProvider = ({ children }) => {
     const [user, setUser ] = useState(null); // Track the authenticated user
     const [loading, setLoading] = useState(true); // Track loading state
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setUser (user); // Set the user state
-            setLoading(false); // Set loading to false once the user state is determined
+            setUser (user); // For the user state
+            setLoading(false); // For loading to false once the user state is determined
         });
 
         return () => unsubscribe(); // Cleanup subscription on unmount
