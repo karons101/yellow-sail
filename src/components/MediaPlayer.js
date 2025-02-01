@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './MediaPlayer.css'; // Import your CSS for styling
-import PlayIcon from '../assets/play-icon.svg'; // Adjust the path to your play icon
-import PauseIcon from '../assets/pause-icon.svg'; // Adjust the path to your pause icon
+import PlayIcon from '../assets/icons/play-icon.svg'; // Adjust the path to your play icon
+import PauseIcon from '../assets/icons/pause-icon.svg'; // Adjust the path to your pause icon
 
 const MediaPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
